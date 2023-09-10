@@ -14,5 +14,5 @@ function getCurrentUTCTime(){
     return formattedTime;
 }
 
-week.textConent = getCurrentDayOfWeek();
+week.textContent = getCurrentDayOfWeek();
 time.textContent = getCurrentUTCTime();
