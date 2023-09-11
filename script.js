@@ -1,18 +1,27 @@
-let week = document.getElementById("currentWeek");
-let time = document.getElementById("time")
+const date = new Date();
+const currentDate = date.getUTCDay();
+const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+];
+const currentDay = days[currentDate]
 
-function getCurrentDayOfWeek(){
-    const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-    const currentDate = new Date();
-    const weekDay = weekDays[currentDate.getUTCDay()];
-    return weekDay;
+
+document.getElementById(
+    "day"
+).innerHTML = `${currentDay}`;
+
+function milliseconds(){
+    const date = new Date();
+    const currentTime = date.getTime();
+    document.getElementById(
+         "time"
+    ).innerHTML = ` ${currentTime}`;
 }
 
-function getCurrentUTCTime(){
-    const currentTime = Date.now()
-    const formattedTime = new Date(currentTime).toLocaleString();
-    return formattedTime;
-}
-
-week.textContent = getCurrentDayOfWeek();
-time.textContent = getCurrentUTCTime();
+setInterval(milliseconds, 1000)
